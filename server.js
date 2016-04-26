@@ -6,7 +6,7 @@ var app = express();
 var api = new ParseServer({
   databaseURI: process.env.MONGODB_URI || 'mongodb://localhost:27017/ps', // Connection string for your MongoDB database
   appId: 'ga-js-ps',
-  masterKey: 'secretMasterKey', // Keep this key secret!
+  masterKey: process.env.PS_MASTER_KEY, // Keep this key secret!
   serverURL: 'http://localhost:1337/parse' // Don't forget to change to https if needed
 });
 
